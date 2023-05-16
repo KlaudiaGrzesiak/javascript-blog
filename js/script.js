@@ -13,14 +13,14 @@ function titleClickHandler(event) {
 		activeLink.classList.remove("active");
 	}
 
-	/* [IN PROGRESS] add class 'active' to the clicked link */
+	/* [DONE] add class 'active' to the clicked link */
 
 	console.log("clickedElement:", clickedElement);
 	clickedElement.classList.add("active");
 
 	/* [DONE] remove class 'active' from all articles */
 
-	const activeArticles = document.querySelectorAll(".posts article.active");
+	const activeArticles = document.querySelectorAll(".posts .active");
 
 	for (let activeArticle of activeArticles) {
 		activeArticle.classList.remove("active");
