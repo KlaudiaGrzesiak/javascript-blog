@@ -43,3 +43,60 @@ const links = document.querySelectorAll(".titles a");
 for (let link of links) {
 	link.addEventListener("click", titleClickHandler);
 }
+
+/* tu zaczyna się nowe zadanie */
+
+const optArticleSelector = ".post",
+	optTitleSelector = ".post-title",
+	optTitleListSelector = ".titles";
+
+function generateTitleLinks(customSelector = "") {
+	console.log(customSelector);
+
+	/* [done] remove contents of titleList */
+
+	const titleList = document.querySelector(optTitleListSelector);
+	titleList.innerHTML = "";
+
+	/* [I'm not sure] for each article */
+
+	let html = " ";
+
+	const articles = document.querySelectorAll(
+		optArticleSelector + customSelector
+	);
+
+	for (let article of articles) {
+		/* [done} get the article id */
+
+		const articleId = article.getAttribute("id");
+
+		/* [done] find the title element */
+		/* get the title from the title element */
+
+		const articleTitle = article.querySelector(optTitleSelector).innerHTML;
+
+		/* [I'm not sure] create HTML of the link */
+
+		const linkHTML =
+			'<li><a href="#' +
+			articleId +
+			'"><span>' +
+			articleTitle +
+			"</span></a></li>";
+
+		console.log(linkHTML);
+
+		/* insert link into titleList */
+		html = html + linkHTML;
+	}
+
+	titleList.innerHTML = html;
+	const links = document.querySelectorAll(".titles a");
+
+	for (let link of links) {
+		link.addEventListener("click", titleClickHandler);
+	}
+}
+
+generateTitleLinks();
