@@ -23,15 +23,15 @@ function titleClickHandler(event) {
   for (let activeArticle of activeArticles) {
     activeArticle.classList.remove('active'); }
 
-  /* get 'href' attribute from the clicked link */
+  /* [done] get 'href' attribute from the clicked link */
 
   const articleSelector = clickedElement.getAttribute('href');
 
-  /* find the correct article using the selector (value of 'href' attribute) */
+  /* [done] find the correct article using the selector (value of 'href' attribute) */
 
   const targetArticle = document.querySelector(articleSelector);
 
-  /* add class 'active' to the correct article */
+  /* [done] add class 'active' to the correct article */
   targetArticle.classList.add('active');
 }
 
@@ -41,11 +41,18 @@ console.log(links);
 for (let link of links) {  link.addEventListener('click', titleClickHandler);
 }
 
-/* New task- Generate title links */
+
+
+
+
+
+
+/* [done] New task- Generate title links */
 
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
-  optTitleListSelector = '.titles';
+  optTitleListSelector = '.titles',
+  optArticleTagsSelector = '.post-tags .list';
 
 function generateTitleLinks(customSelector = '') {
   console.log(customSelector);
@@ -65,12 +72,12 @@ function generateTitleLinks(customSelector = '') {
   console.log(articles, optArticleSelector + customSelector);
 
   for (let article of articles) {
-  /* [done} get the article id */
+  /* [done] get the article id */
 
     const articleId = article.getAttribute('id');
 
     /* [done] find the title element */
-    /* get the title from the title element */
+    /* [done] get the title from the title element */
 
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
 
@@ -80,7 +87,7 @@ function generateTitleLinks(customSelector = '') {
 
     console.log(linkHTML);
 
-    /* insert link into titleList */
+    /* [done] insert link into titleList */
     html = html + linkHTML;
   }
 
@@ -91,4 +98,38 @@ function generateTitleLinks(customSelector = '') {
     link.addEventListener('click', titleClickHandler);}
 }
 
-generateTitleLinks();
+
+
+
+
+function generateTags(){
+
+  /* [done]] New task - find all articles */
+
+  const articles = document.querySelectorAll(optArticleSelector);
+
+
+  /* START LOOP: for every article: */
+
+    /* find tags wrapper */
+
+    /* make html variable with empty string */
+
+    /* get tags from data-tags attribute */
+
+    /* split tags into array */
+
+    /* START LOOP: for each tag */
+
+      /* generate HTML of the link */
+
+      /* add generated code to html variable */
+
+    /* END LOOP: for each tag */
+
+    /* insert HTML of all the links into the tags wrapper */
+
+  /* END LOOP: for every article: */
+}
+
+generateTags();
