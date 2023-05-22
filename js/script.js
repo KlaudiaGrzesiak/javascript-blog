@@ -102,7 +102,7 @@ function generateTitleLinks(customSelector = '') {
 
 
 
-function generateTags(){
+function generateTags() {
 
   /* [done]] New task - find all articles */
 
@@ -123,14 +123,20 @@ function generateTags(){
     /* get tags from data-tags attribute */
   
   const articleTags = article.getAttribute('data-tags');
-
+  console.log(articleTags);
 
     /* split tags into array */
 
+  const articleTagsArray = articleTags.split(' ');
+
     /* START LOOP: for each tag */
+
+  for (let tag of articleTagsArray){
+    console.log(articleTags);
 
       /* generate HTML of the link */
 
+  }
       /* add generated code to html variable */
 
     /* END LOOP: for each tag */
@@ -139,5 +145,7 @@ function generateTags(){
 
   /* END LOOP: for every article: */
 }
+}
 
 generateTags();
+
