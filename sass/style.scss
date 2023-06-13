@@ -82,6 +82,7 @@ body {
 /* Authors */
 .authors li {
   margin-bottom: 12px;
+  padding: 15px;
 }
 
 /* Post */
@@ -110,18 +111,20 @@ body {
   margin: 0 10px 0 0;
 }
 
+
 .post-author li {
   list-style-type: none;
 }
 
-.sidebar .authors li {
-  padding: 15px 5px;
-  margin: 32px auto;
+
+.list.authors li {
+  display: inline-block;
+  margin-right: 5px;
 }
 
 /*Tags*/
 .tag-size-1 {
-  font-size: 80%;
+  font-size: 90%;
 }
 
 .tag-size-2 {
